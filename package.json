@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Windowing module for the PiCluster project",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint . --ext .js,.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FlorentinTh/PiCluster-Windowing.git"
