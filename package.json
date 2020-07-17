@@ -1,7 +1,7 @@
 {
   "name": "picluster-windowing",
   "version": "1.0.0",
-  "description": "Windowing module for the PiCluster project.",
+  "description": "Windowing module for the PiCluster project",
   "main": "index.js",
   "scripts": {},
   "repository": {
