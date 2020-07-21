@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "eslint . --ext .js,.json",
     "build": "babel src --out-dir dist",
-    "start": "npm-run-all build production",
-    "production": "node dist/index.js"
+    "start": "npm-run-all build dev",
+    "dev": "cross-env NODE_ENV=development node dist/index.js",
+    "prod": "cross-env NODE_ENV=production node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,12 @@
     "node": ">=10.x <=12.x"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "line-by-line": "^0.1.6",
-    "window-function": "^2.1.0"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
