@@ -6,7 +6,10 @@ dotenv.config();
 
 const defaultValidationSchema = Joi.object({
   LOG_FILE: Joi.string().required(),
-  API_APP_KEY: Joi.string().required()
+  API_URL: Joi.string().required(),
+  API_VERSION: Joi.string().required(),
+  API_APP_KEY: Joi.string().required(),
+  API_PROXY: Joi.string().required()
 })
   .unknown()
   .required();
@@ -27,7 +30,10 @@ class Config {
         job_id: process.env.DATA_JOB_ID
       },
       api: {
-        key: path.normalize(env.API_APP_KEY)
+        url: path.normalize(env.API_URL),
+        version: path.normalize(env.API_VERSION),
+        app_key: path.normalize(env.API_APP_KEY),
+        proxy: path.normalize(env.API_PROXY)
       }
     };
   }

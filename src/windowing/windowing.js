@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 import LineByLineReader from 'line-by-line';
-import Logger from './utils/logger';
-import * as WindowFunction from './WindowFunction';
-import MatrixHelper from './helpers/matrix.helper';
+import Logger from '../utils/logger';
+import * as WindowingFunction from './windowing.functions';
+import MatrixHelper from '../helpers/matrix.helper';
 
 class Windowing {
   constructor(length, func, input) {
@@ -12,9 +12,7 @@ class Windowing {
     this.input = input;
   }
 
-  async start(user, job) {
-    Logger.info(`User: ${user} starts windowing task for job: ${job}`);
-
+  async apply(user, job) {
     const outputFile = path.join(__dirname, 'output', 'input.window.csv');
     const lineReader = new LineByLineReader(this.input, { skipEmptyLines: true });
 
@@ -28,7 +26,7 @@ class Windowing {
       if (error.code === 'ENOENT') {
         writeStream = fs.createWriteStream(outputFile, { encoding: 'utf-8' });
       } else {
-        Logger.error('Error: ' + error);
+        Logger.error('[Container] Error: ' + error);
       }
     }
 
@@ -71,19 +69,19 @@ class Windowing {
 
               switch (this.func) {
                 case 'rectangular':
-                  window = new WindowFunction.Rectangular(signal).compute();
+                  window = new WindowingFunction.Rectangular(signal).compute();
                   break;
                 case 'triangular':
-                  window = new WindowFunction.Triangular(signal).compute();
+                  window = new WindowingFunction.Triangular(signal).compute();
                   break;
                 case 'blackman':
-                  window = new WindowFunction.Blackman(signal).compute();
+                  window = new WindowingFunction.Blackman(signal).compute();
                   break;
                 case 'hamming':
-                  window = new WindowFunction.Hamming(signal).compute();
+                  window = new WindowingFunction.Hamming(signal).compute();
                   break;
                 case 'hann':
-                  window = new WindowFunction.Hann(signal).compute();
+                  window = new WindowingFunction.Hann(signal).compute();
                   break;
               }
             } else {
@@ -110,8 +108,6 @@ class Windowing {
       lineReader.close();
       writeStream.end();
     });
-
-    Logger.info(`End of windowing task started by: ${user} for job: ${job}`);
   }
 }
 

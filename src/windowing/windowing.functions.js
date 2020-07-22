@@ -1,6 +1,6 @@
-class WindowFunction {
+class WindowingFunction {
   constructor(signal) {
-    if (this.constructor === WindowFunction) {
+    if (this.constructor === WindowingFunction) {
       throw new TypeError(
         'Abstract class "WindowFunction" cannot be instantiated directly'
       );
@@ -20,16 +20,13 @@ class WindowFunction {
   }
 }
 
-export class Blackman extends WindowFunction {
+export class Blackman extends WindowingFunction {
   constructor(signal) {
     super(signal);
 
     this.signal = signal;
-
     this.a0 = 0.42659;
-
     this.a1 = 0.49656;
-
     this.a2 = 0.076849;
   }
 
@@ -47,7 +44,7 @@ export class Blackman extends WindowFunction {
   }
 }
 
-export class Hamming extends WindowFunction {
+export class Hamming extends WindowingFunction {
   constructor(signal) {
     super(signal);
 
@@ -67,7 +64,7 @@ export class Hamming extends WindowFunction {
   }
 }
 
-export class Hann extends WindowFunction {
+export class Hann extends WindowingFunction {
   constructor(signal) {
     super(signal);
 
@@ -87,7 +84,7 @@ export class Hann extends WindowFunction {
   }
 }
 
-export class Triangular extends WindowFunction {
+export class Triangular extends WindowingFunction {
   constructor(signal) {
     super(signal);
 
@@ -107,7 +104,7 @@ export class Triangular extends WindowFunction {
   }
 }
 
-export class Rectangular extends WindowFunction {
+export class Rectangular extends WindowingFunction {
   constructor(signal) {
     super(signal);
 
