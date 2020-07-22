@@ -57,6 +57,7 @@ class Tasks {
       })
       .catch(error => {
         Logger.error('[API] Error:' + error);
+        throw new Error('API Error : ' + error);
       });
     Logger.info(
       `[Container] Info: end of windowing task started by user - ${this.user} for job - ${this.job}`
@@ -83,6 +84,7 @@ class Tasks {
       })
       .catch(error => {
         Logger.error('[API] Error:' + error);
+        throw new Error('API Error : ' + error);
       });
   }
 
@@ -100,6 +102,7 @@ class Tasks {
       })
       .catch(error => {
         Logger.error('[API] Error:' + error);
+        throw new Error('API Error : ' + error);
       });
   }
 }
