@@ -45,7 +45,7 @@ class Tasks {
       `[Container] Info: user - ${this.user} starts windowing task for job - ${this.job}`
     );
     axios
-      .post(`/jobs/task/start/${this.job}?task=${this.name}`, null, {
+      .post(`/jobs/${this.job}/tasks/start?task=${this.name}`, null, {
         headers: APIHelper.setAPIKey()
       })
       .then(response => {
