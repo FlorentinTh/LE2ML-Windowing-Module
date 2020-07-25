@@ -69,19 +69,19 @@ class Windowing {
 
               switch (this.func) {
                 case 'rectangular':
-                  window = new WindowingFunction.Rectangular(signal).compute();
+                  window = new WindowingFunction.Rectangular(signal);
                   break;
                 case 'triangular':
-                  window = new WindowingFunction.Triangular(signal).compute();
+                  window = new WindowingFunction.Triangular(signal);
                   break;
                 case 'blackman':
-                  window = new WindowingFunction.Blackman(signal).compute();
+                  window = new WindowingFunction.Blackman(signal);
                   break;
                 case 'hamming':
-                  window = new WindowingFunction.Hamming(signal).compute();
+                  window = new WindowingFunction.Hamming(signal);
                   break;
                 case 'hann':
-                  window = new WindowingFunction.Hann(signal).compute();
+                  window = new WindowingFunction.Hann(signal);
                   break;
               }
             } else {
