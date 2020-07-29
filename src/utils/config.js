@@ -27,13 +27,15 @@ class Config {
       log_file: env.LOG_FILE,
       data: {
         user_id: process.env.DATA_USER_ID,
-        job_id: process.env.DATA_JOB_ID
+        job_id: process.env.DATA_JOB_ID,
+        token: process.env.DATA_TOKEN,
+        base_path: path.normalize(env.DATA_BASE_PATH)
       },
       api: {
-        url: path.normalize(env.API_URL),
-        version: path.normalize(env.API_VERSION),
-        app_key: path.normalize(env.API_APP_KEY),
-        proxy: path.normalize(env.API_PROXY)
+        url: env.API_URL,
+        version: env.API_VERSION,
+        app_key: env.API_APP_KEY,
+        proxy: env.API_PROXY
       }
     };
   }

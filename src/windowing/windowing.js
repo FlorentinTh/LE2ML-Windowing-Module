@@ -4,6 +4,9 @@ import LineByLineReader from 'line-by-line';
 import Logger from '../utils/logger';
 import * as WindowingFunction from './windowing.functions';
 import MatrixHelper from '../helpers/matrix.helper';
+import Config from '../utils/config';
+
+const config = Config.getConfig();
 
 class Windowing {
   constructor(length, func, input) {
@@ -13,7 +16,14 @@ class Windowing {
   }
 
   async apply(user, job) {
-    const outputFile = path.join(__dirname, 'output', 'input.window.csv');
+    const outputFile = path.join(
+      config.data.base_path,
+      config.data.user_id,
+      'jobs',
+      config.data.job_id,
+      'input.window.csv'
+    );
+
     const lineReader = new LineByLineReader(this.input, { skipEmptyLines: true });
 
     let writeStream;
@@ -69,19 +79,19 @@ class Windowing {
 
               switch (this.func) {
                 case 'rectangular':
-                  window = new WindowingFunction.Rectangular(signal);
+                  window = new WindowingFunction.Rectangular(signal).compute();
                   break;
                 case 'triangular':
-                  window = new WindowingFunction.Triangular(signal);
+                  window = new WindowingFunction.Triangular(signal).compute();
                   break;
                 case 'blackman':
-                  window = new WindowingFunction.Blackman(signal);
+                  window = new WindowingFunction.Blackman(signal).compute();
                   break;
                 case 'hamming':
-                  window = new WindowingFunction.Hamming(signal);
+                  window = new WindowingFunction.Hamming(signal).compute();
                   break;
                 case 'hann':
-                  window = new WindowingFunction.Hann(signal);
+                  window = new WindowingFunction.Hann(signal).compute();
                   break;
               }
             } else {

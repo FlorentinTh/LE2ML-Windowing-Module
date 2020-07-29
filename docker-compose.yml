@@ -2,20 +2,16 @@ version: '3.7'
 
 services:
   windowing:
-    build:
-      context: .
-      dockerfile: Dockerfile
     image: picluster-windowing:latest
-    container_name: picluster-windowing
     environment:
       DATA_USER_ID: 5ed93a900857444fa43b8417
-      DATA_JOB_ID: 5f0f1a0d1a8b9e19f40ac201
+      DATA_JOB_ID: 5f2073236bcab70fec5ddc43
+      TOKEN: 3e52de96-57d1-4ac1-9849-1e0d617df7c3
     networks:
       - picluster-net
     volumes:
-      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f0f1a0d1a8b9e19f40ac201/conf.json:/usr/src/app/conf.json
-      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/raw:/usr/src/app/raw
-      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f0f1a0d1a8b9e19f40ac201:/usr/src/app/output
+      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/data/inertial/raw:/usr/src/app/data
+      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f2073236bcab70fec5ddc43:/usr/src/app/job
 
 networks:
   picluster-net:

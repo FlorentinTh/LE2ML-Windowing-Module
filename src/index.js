@@ -4,7 +4,8 @@ import Task from './task';
 
 const config = Config.getConfig();
 
-APIHelper.setBaseUrl(`${config.api.url}/v${config.api.version}`);
+const baseApiUrl = config.api.url + '/v' + config.api.version;
+APIHelper.setBaseUrl(baseApiUrl);
 
 (async () => {
   const task = new Task();

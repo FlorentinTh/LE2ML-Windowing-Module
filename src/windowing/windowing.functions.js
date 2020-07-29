@@ -27,7 +27,6 @@ export class Blackman extends WindowingFunction {
     this.a0 = 0.42659;
     this.a1 = 0.49656;
     this.a2 = 0.076849;
-    this.compute();
   }
 
   compute() {
@@ -46,7 +45,6 @@ export class Hamming extends WindowingFunction {
   constructor(signal) {
     super(signal);
     this.signal = signal;
-    this.compute();
   }
 
   compute() {
@@ -64,7 +62,6 @@ export class Hann extends WindowingFunction {
   constructor(signal) {
     super(signal);
     this.signal = signal;
-    this.compute();
   }
 
   compute() {
@@ -82,7 +79,6 @@ export class Triangular extends WindowingFunction {
   constructor(signal) {
     super(signal);
     this.signal = signal;
-    this.compute();
   }
 
   compute() {
@@ -100,7 +96,6 @@ export class Rectangular extends WindowingFunction {
   constructor(signal) {
     super(signal);
     this.signal = signal;
-    this.compute();
   }
 
   compute() {

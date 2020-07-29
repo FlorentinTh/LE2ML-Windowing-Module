@@ -11,28 +11,50 @@ const config = Config.getConfig();
 class Tasks {
   constructor() {
     this.name = 'windowing';
+    this.state = 'started';
     this.user = config.data.user_id;
     this.job = config.data.job_id;
   }
 
   async init() {
-    await this.start();
-    const pipelineFilePath = path.resolve(__dirname, 'conf.json');
+    Logger.info(
+      `[Container] Info: user - ${this.user} starts windowing task for job - ${this.job}`
+    );
+
+    const pipelineFilePath = path.resolve(
+      config.data.base_path,
+      this.user,
+      'jobs',
+      this.job,
+      'conf.json'
+    );
 
     try {
       const pipelineFile = await fs.promises.readFile(pipelineFilePath);
       const pipelineObject = JSON.parse(pipelineFile.toString());
 
       const length = pipelineObject.windowing.parameters.length;
+
+      if (length === 0 || length > 200) {
+        Logger.error(
+          '[Container] Error: length cannot be set to 0 and it cannot exceed 200'
+        );
+        await this.error();
+      }
+
       const func = pipelineObject.windowing.parameters.function.label;
       const input = path.join(
-        __dirname,
+        config.data.base_path,
+        this.user,
+        'data',
+        pipelineObject.source,
         pipelineObject.input.file.type,
         pipelineObject.input.file.filename
       );
 
       const windowing = new Windowing(length, func, input);
-      await windowing.apply(config.data.user_id, config.data.job_id);
+      await windowing.apply();
+      this.state = 'completed';
       await this.success();
     } catch (error) {
       Logger.error('[Container] Error: ' + error);
@@ -40,36 +62,14 @@ class Tasks {
     }
   }
 
-  async start() {
-    Logger.info(
-      `[Container] Info: user - ${this.user} starts windowing task for job - ${this.job}`
-    );
-    axios
-      .post(`/jobs/${this.job}/tasks/start?task=${this.name}`, null, {
-        headers: APIHelper.setAPIKey()
-      })
-      .then(response => {
-        if (response) {
-          Logger.info(
-            `[API] Info: Windowing task started by user: ${this.user} for job: ${this.job} successfully updated (STATUS: STARTED).`
-          );
-        }
-      })
-      .catch(error => {
-        Logger.error('[API] Error:' + error);
-        throw new Error('API Error : ' + error);
-      });
-    Logger.info(
-      `[Container] Info: end of windowing task started by user - ${this.user} for job - ${this.job}`
-    );
-  }
-
   async success() {
     axios
       .post(
-        `/jobs/${this.job}`,
+        `/jobs/${this.job}/tasks/complete`,
         {
-          windowing: 'completed'
+          task: this.name,
+          state: this.state,
+          token: config.data.token
         },
         {
           headers: APIHelper.setAPIKey()
@@ -90,7 +90,7 @@ class Tasks {
 
   async error() {
     axios
-      .post(`/jobs/task/error/${this.job}?task=${this.name}`, null, {
+      .post(`/jobs/${this.job}/task/error?task=${this.name}`, null, {
         headers: APIHelper.setAPIKey()
       })
       .then(response => {

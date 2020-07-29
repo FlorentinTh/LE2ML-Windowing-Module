@@ -1,10 +1,14 @@
-FROM node:14-alpine AS build
+FROM node:12-slim AS build
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
 COPY .babelrc ./
+
+COPY .npmrc ./
+
+COPY .env ./
 
 COPY ./src ./src
 
@@ -12,17 +16,15 @@ RUN npm install
 
 RUN npm run build
 
-FROM node:14-alpine
+FROM node:12-slim
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-COPY .babelrc ./
+COPY .npmrc ./
 
-COPY .env ./
-
-RUN mkdir -p ./output
+RUN  mkdir -p ./data && mkdir -p ./job
 
 COPY --from=build /usr/src/app/dist ./
 

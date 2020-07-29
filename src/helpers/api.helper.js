@@ -1,3 +1,4 @@
+import https from 'https';
 import axios from 'axios';
 import Config from '../utils/config';
 
@@ -14,10 +15,12 @@ class APIHelper {
     }
 
     if (proxy) {
-      axios.defaults.baseURL = config.api.proxy + '/' + config.api.url;
+      axios.defaults.baseURL = config.api.proxy + '/' + url;
     } else {
-      axios.defaults.baseURL = config.api.url;
+      axios.defaults.baseURL = url;
     }
+
+    axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
   }
 
   static setAPIKey() {

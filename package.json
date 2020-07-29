@@ -7,7 +7,8 @@
     "lint": "eslint . --ext .js,.json",
     "clean": "rimraf dist",
     "compile": "babel src --out-dir dist",
-    "build": "npm-run-all clean compile",
+    "build": "npm-run-all clean compile copy-env",
+    "copy-env": "cpy .env dist",
     "start": "npm-run-all build dev",
     "dev": "cross-env NODE_ENV=development node dist/index.js",
     "prod": "cross-env NODE_ENV=production node index.js"
@@ -42,6 +43,7 @@
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-eslint": "^10.1.0",
+    "cpy-cli": "^3.1.1",
     "eslint": "^7.4.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^6.11.0",
