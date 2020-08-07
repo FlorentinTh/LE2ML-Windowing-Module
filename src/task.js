@@ -21,7 +21,7 @@ class Tasks {
       `[Container] Info: user - ${this.user} starts windowing task for job - ${this.job}`
     );
 
-    const pipelineFilePath = path.resolve(
+    const confPath = path.resolve(
       config.data.base_path,
       this.user,
       'jobs',
@@ -29,37 +29,52 @@ class Tasks {
       'conf.json'
     );
 
+    let confFile;
     try {
-      const pipelineFile = await fs.promises.readFile(pipelineFilePath);
-      const pipelineObject = JSON.parse(pipelineFile.toString());
-
-      const length = pipelineObject.windowing.parameters.length;
-
-      if (length === 0 || length > 200) {
-        Logger.error(
-          '[Container] Error: length cannot be set to 0 and it cannot exceed 200'
-        );
-        await this.error();
-      }
-
-      const func = pipelineObject.windowing.parameters.function.label;
-      const input = path.join(
-        config.data.base_path,
-        this.user,
-        'data',
-        pipelineObject.source,
-        pipelineObject.input.file.type,
-        pipelineObject.input.file.filename
-      );
-
-      const windowing = new Windowing(length, func, input);
-      await windowing.apply();
-      this.state = 'completed';
-      await this.success();
+      confFile = await fs.promises.readFile(confPath);
     } catch (error) {
-      Logger.error('[Container] Error: ' + error);
-      await this.error();
+      Logger.error('[Container] ' + error);
+      return await this.error();
     }
+
+    const conf = JSON.parse(confFile.toString());
+
+    const length = conf.windowing.parameters.length;
+    const func = conf.windowing.parameters.function.label;
+    const overlap = conf.windowing.parameters.overlap;
+
+    const input = path.join(
+      config.data.base_path,
+      this.user,
+      'data',
+      conf.source,
+      conf.input.file.type,
+      conf.input.file.filename
+    );
+
+    if (length === 0 || length > 200) {
+      Logger.error(
+        '[Container] Error: length cannot be set to 0 and it cannot exceed 200'
+      );
+      return await this.error();
+    }
+
+    const windowing = new Windowing(length, func, overlap, input);
+
+    try {
+      if (overlap === 0) {
+        await windowing.sanitize();
+        await windowing.process({ overlap: false });
+      } else {
+        await windowing.process({ overlap: true });
+      }
+    } catch (error) {
+      Logger.error('[Container] ' + error);
+      return await this.error();
+    }
+
+    this.state = 'completed';
+    return await this.error();
   }
 
   async success() {
@@ -83,8 +98,7 @@ class Tasks {
         }
       })
       .catch(error => {
-        Logger.error('[API] Error:' + error);
-        throw new Error('API Error : ' + error);
+        Logger.error('[API] :' + error);
       });
   }
 
@@ -101,8 +115,7 @@ class Tasks {
         }
       })
       .catch(error => {
-        Logger.error('[API] Error:' + error);
-        throw new Error('API Error : ' + error);
+        Logger.error('[API] :' + error);
       });
   }
 }
