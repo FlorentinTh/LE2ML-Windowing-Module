@@ -52,10 +52,8 @@ class Tasks {
       conf.input.file.filename
     );
 
-    if (length === 0 || length > 200) {
-      Logger.error(
-        '[Container] Error: length cannot be set to 0 and it cannot exceed 200'
-      );
+    if (length === 0) {
+      Logger.error('[Container] Error: length cannot be set to 0');
       return await this.error();
     }
 
