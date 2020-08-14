@@ -46,9 +46,8 @@ class Tasks {
     const input = path.join(
       config.data.base_path,
       this.user,
-      'data',
-      conf.source,
-      conf.input.file.type,
+      'jobs',
+      this.job,
       conf.input.file.filename
     );
 
@@ -72,7 +71,7 @@ class Tasks {
     }
 
     this.state = 'completed';
-    return await this.error();
+    return await this.success();
   }
 
   async success() {
