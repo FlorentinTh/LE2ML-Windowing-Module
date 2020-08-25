@@ -90,7 +90,7 @@ class Tasks {
       .then(response => {
         if (response) {
           Logger.info(
-            `[API] Info: Windowing task started by user: ${this.user} for job: ${this.job} successfully updated (STATUS: STARTED).`
+            `[API] Info: Windowing task started by user: ${this.user} for job: ${this.job} successfully updated (STATUS: COMPLETED).`
           );
         }
       })
@@ -101,7 +101,7 @@ class Tasks {
 
   async error() {
     axios
-      .post(`/jobs/${this.job}/task/error?task=${this.name}`, null, {
+      .post(`/jobs/${this.job}/tasks/error?task=${this.name}`, null, {
         headers: APIHelper.setAPIKey()
       })
       .then(response => {
