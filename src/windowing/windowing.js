@@ -21,13 +21,7 @@ class Windowing {
       skipEmptyLines: true
     });
 
-    this.sanitizeInput = path.join(
-      config.data.base_path,
-      config.data.user_id,
-      'jobs',
-      config.data.job_id,
-      'windowing.sanitize.tmp'
-    );
+    this.sanitizeInput = path.join(config.data.base_path, 'windowing.sanitize.tmp');
 
     const output = await this.makeOutput(this.sanitizeInput);
 
@@ -102,13 +96,7 @@ class Windowing {
       skipEmptyLines: true
     });
 
-    const outputFile = path.join(
-      config.data.base_path,
-      config.data.user_id,
-      'jobs',
-      config.data.job_id,
-      'windowing.csv'
-    );
+    const outputFile = path.join(config.data.base_path, 'windowing.csv');
 
     const output = await this.makeOutput(outputFile);
 
@@ -176,6 +164,7 @@ class Windowing {
         if (!(this.sanitizeInput === null)) {
           try {
             await fs.promises.unlink(this.sanitizeInput);
+            resolve();
           } catch (error) {
             reject(new Error('[Container] : ' + error));
           }
@@ -189,6 +178,9 @@ class Windowing {
   }
 
   async processWithOverlap() {
+    /**
+     * TODO
+     */
     return new Promise((resolve, reject) => {
       reject(new Error('Windowing task with overlap is not implemented yet'));
     });
