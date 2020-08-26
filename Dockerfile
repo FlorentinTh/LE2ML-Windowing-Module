@@ -1,32 +1,20 @@
-FROM node:12-slim AS build
+FROM node:12-alpine AS build
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-
-COPY .babelrc ./
-
-COPY .npmrc ./
-
-COPY .env ./
-
-COPY ./src ./src
+COPY . .
 
 RUN npm install
 
 RUN npm run build
 
-FROM node:12-slim
-
-WORKDIR /usr/src/app
+FROM node:12-alpine
 
 COPY package*.json ./
 
-COPY .npmrc ./
+COPY .env .
 
-RUN  mkdir -p ./data && mkdir -p ./job
-
-COPY --from=build /usr/src/app/dist ./
+COPY --from=build /usr/src/app/dist .
 
 RUN npm install --only=prod
 

@@ -21,13 +21,7 @@ class Tasks {
       `[Container] Info: user - ${this.user} starts windowing task for job - ${this.job}`
     );
 
-    const confPath = path.resolve(
-      config.data.base_path,
-      this.user,
-      'jobs',
-      this.job,
-      'conf.json'
-    );
+    const confPath = path.resolve(config.data.base_path, 'conf.json');
 
     let confFile;
     try {
@@ -39,17 +33,11 @@ class Tasks {
 
     const conf = JSON.parse(confFile.toString());
 
-    const length = conf.windowing.parameters.length;
+    const length = conf.windowing.parameters.length.match(/(\d+)/)[0];
     const func = conf.windowing.parameters.function.label;
     const overlap = conf.windowing.parameters.overlap;
 
-    const input = path.join(
-      config.data.base_path,
-      this.user,
-      'jobs',
-      this.job,
-      conf.input.file.filename
-    );
+    const input = path.join(config.data.base_path, conf.input.file.filename);
 
     if (length === 0) {
       Logger.error('[Container] Error: length cannot be set to 0');
@@ -71,7 +59,7 @@ class Tasks {
     }
 
     this.state = 'completed';
-    return await this.success();
+    await this.success();
   }
 
   async success() {

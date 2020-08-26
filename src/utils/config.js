@@ -9,7 +9,8 @@ const defaultValidationSchema = Joi.object({
   API_URL: Joi.string().required(),
   API_VERSION: Joi.string().required(),
   API_APP_KEY: Joi.string().required(),
-  API_PROXY: Joi.string().required()
+  API_PROXY: Joi.string().required(),
+  DATA_BASE_PATH: Joi.string().required()
 })
   .unknown()
   .required();
