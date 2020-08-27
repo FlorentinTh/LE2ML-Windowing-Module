@@ -2,17 +2,11 @@ version: '3.7'
 
 services:
   windowing:
-    image: picluster-windowing:latest
+    image: core-windowing:latest
     environment:
       DATA_USER_ID: 5ed93a900857444fa43b8417
-      DATA_JOB_ID: 5f2073236bcab70fec5ddc43
-      TOKEN: 3e52de96-57d1-4ac1-9849-1e0d617df7c3
-    networks:
-      - picluster-net
+      DATA_JOB_ID: 5f46d94d3233a07f34471d0f
+      DATA_TOKEN: 3e52de96-57d1-4ac1-9849-1e0d617df7c3
     volumes:
-      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/data/inertial/raw:/usr/src/app/data
-      - /d/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f2073236bcab70fec5ddc43:/usr/src/app/job
-
-networks:
-  picluster-net:
-    name: picluster-net
+      - d:/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f46d94d3233a07f34471d0f:/job
+    network_mode: bridge
