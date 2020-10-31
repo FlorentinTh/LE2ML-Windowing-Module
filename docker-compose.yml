@@ -8,5 +8,5 @@ services:
       DATA_JOB_ID: 5f46d94d3233a07f34471d0f
       DATA_TOKEN: 3e52de96-57d1-4ac1-9849-1e0d617df7c3
     volumes:
-      - d:/Development/PiCluster-data/5ed93a900857444fa43b8417/jobs/5f46d94d3233a07f34471d0f:/job
+      - d:/Development/LE2ML-Data/5ed93a900857444fa43b8417/jobs/5f46d94d3233a07f34471d0f:/job
     network_mode: bridge
