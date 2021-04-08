@@ -32,7 +32,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "axios": "^0.21.1",
-    "core-js": "^3.10.0",
+    "core-js": "^3.10.1",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "line-by-line": "^0.1.6",
@@ -40,9 +40,9 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
-    "@babel/core": "^7.13.14",
+    "@babel/core": "^7.13.15",
     "@babel/eslint-parser": "^7.13.14",
-    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-env": "^7.13.15",
     "cpy-cli": "^3.1.1",
     "eslint": "^7.23.0",
     "eslint-config-node": "^4.1.0",
