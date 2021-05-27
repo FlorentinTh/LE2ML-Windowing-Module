@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.1...v1.0.2) (2021-05-27)
+
+
+### Chore
+
+* **deps:** update dependencies ([928df35](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/928df35bbe2b3a19c657a043c02b9b6336e0980c))
+* **deps:** update dependencies ([593e437](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/593e4370dae6a908ee693b25c9325a20915d454e))
+* **deps:** update dependencies ([a8078fa](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/a8078fab83cc290ada8c17ce20f787b0b1627679))
+* **deps:** update dependencies ([7d95286](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/7d95286aab81d8760e42ea8c3ae02c8b63568fb9))
+* **deps:** update dependencies ([7be5fee](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/7be5fee08ea889f971a38c8a455a4639a640cd47))
+* **deps:** update dependencies and update npm to v7.x ([b46e46f](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/b46e46f758ae386290595d6b4aae8c2443485bd6))
+
 ### 1.0.1 (2021-05-13)
 
 
