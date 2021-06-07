@@ -31,7 +31,7 @@
   "homepage": "https://github.com/FlorentinTh/LE2ML-Windowing-Module#README",
   "dependencies": {
     "axios": "^0.21.1",
-    "core-js": "^3.13.1",
+    "core-js": "^3.14.0",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "joi": "^17.4.0",
@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.14.4",
     "cpy-cli": "^3.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -56,7 +56,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "npm-run-all": "^4.1.5",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "standard-version": "^9.3.0"
   },
