@@ -1,6 +1,6 @@
 # LE2ML-Windowing-Module
 
-[![GitHub Release](https://img.shields.io/github/release/FlorentinTh/LE2ML-Windowing-Module?style=flat-square)](https://github.com/FlorentinTh/LE2ML-Windowing-Module/releases) [![GitHub](https://img.shields.io/github/license/FlorentinTh/LE2ML-Windowing-Module?style=flat-square)](https://github.com/FlorentinTh/LE2ML-Windowing-Module/blob/master/LICENSE)
+[![Snyk](https://github.com/FlorentinTh/LE2ML-Windowing-Module/actions/workflows/dependencies.yml/badge.svg)](https://github.com/FlorentinTh/LE2ML-Windowing-Module/actions/workflows/dependencies.yml) [![GitHub Release](https://img.shields.io/github/release/FlorentinTh/LE2ML-Windowing-Module)](https://github.com/FlorentinTh/LE2ML-Windowing-Module/releases) [![GitHub License](https://img.shields.io/github/license/FlorentinTh/LE2ML-Windowing-Module)](https://github.com/FlorentinTh/LE2ML-Windowing-Module/blob/master/LICENSE)
 
 Repository of the windowing module for the LE2ML workbench.
 
