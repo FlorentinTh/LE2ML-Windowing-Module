@@ -10,12 +10,10 @@ RUN npm run build
 
 FROM node:12-slim
 
-COPY package*.json ./
+COPY package*.json .
 
-COPY .env .
-
-COPY --from=build /usr/src/app/dist .
+COPY --from=build /usr/src/app/build .
 
 RUN npm install --only=prod
 
-CMD npm run prod
+CMD npm run production
