@@ -2,6 +2,51 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.2...v1.0.3) (2021-09-09)
+
+
+### Documentation
+
+* **readme:** add Snyk badge to README ([bdeca6d](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/bdeca6de6122f813d9441061778124d27e0ab4cc))
+* **readme:** update readme ([e21e816](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/e21e8167172d8fc82d6d89ef11be6af8f3540eae))
+* **readme:** update readme ([1d9f85f](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/1d9f85f81790e9c1744fca5a9bece97321a19d1b))
+
+
+### CI
+
+* **dependabot:** update dependabot to only check production dependencies ([7d040b5](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/7d040b5ab7f603f423d59f315461bb8d25415155))
+* **workflows:** add a build file to github actions worklflows ([d559ea5](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/d559ea58960f9b0eb7621ea58e97e832cc66aa70))
+* **workflows:** add a docker build file to github actions workflows ([6282960](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/628296026712cfb45c0e09a0cb8d9a7b7f6ac610))
+* **workflows:** add github action workflow file to check dependencies vulnerabilities with Snyk ([d581719](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/d581719277cca80e3467e3e5113d586645691dc7))
+* **workflows:** disable trigger of workflows for dependabot alerts ([09f7fe9](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/09f7fe9c7fa00b7760271de62ddea37e02af7877))
+* **workflows:** fix a context error in docker build workflow ([df2c8a5](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/df2c8a5cf8f60e2309458fb98409c7a19d1520a8))
+* **workflows:** fix issues with docker build workflow ([03cba4a](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/03cba4a5b346ee788019a27f2e5c48c2017a3501))
+* **workflows:** update existing workflows ([ae47761](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/ae477610561ed9220fcf175980ceade6cc2b63f8))
+
+
+### Build System
+
+* **docker:** update docker-compose.yml example ([079c272](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/079c2727b3825ed9eeda76c32b0f6d7e1f57879f))
+* **npm:** change package build scripts ([643e393](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/643e3932ed0358ced06fd97a2c1ce774a7f8cc92))
+
+
+### Chore
+
+* **deps:** update dependencies ([bea6ff7](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/bea6ff746f8d0d45ba21bfc8f05cf2ef1553af03))
+* **deps:** update dependencies ([0d8ec7c](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/0d8ec7c4177b201870adff2ab6e2a280075d545b))
+* **deps:** update dependencies ([9f8c812](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/9f8c812aa9d7fdba40cf990df5b86e14e0453c01))
+* **deps:** update dependencies ([76bf7c1](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/76bf7c1a6b25ac86f173d42d872ab4e61d327dff))
+* **deps:** update dependencies ([ea56b50](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/ea56b50f4b998039422487eda18f41254bf1b142))
+* **deps:** update dependencies ([9a66821](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/9a66821b4858b0173932337bc677e0d047c3fd5f))
+* **deps:** update dependencies ([6811b1c](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/6811b1c8ced0d53065c95d5782d2736dee3b766d))
+* **deps:** update dependencies ([3770db0](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/3770db01a1e4cb54403009a05ca6cea0b260ae8e))
+* **deps:** update dependencies ([7c43982](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/7c4398218ad985a43d207dd4357882668acc1e8f))
+* **deps:** update dependencies ([c10b2b8](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/c10b2b87e06b2dbb3d8b479e21e7514019975b2c))
+* **deps:** update dependencies ([923ecdb](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/923ecdb348a86c7e345f5b29575960796f46d9cf))
+* **deps:** update dependencies ([73039a8](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/73039a8a8dae3a2138b46b701625f155e641d06d))
+* **deps:** update dependencies ([c08bd6f](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/c08bd6ff4664f24e65e40a53b3776452709f7829))
+* **dockerfile:** update npm to v7 in docker image build ([9e3b4f1](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/9e3b4f19948084211e6b529bab717386c6d42fff))
+
 ### [1.0.2](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.1...v1.0.2) (2021-05-27)
 
 
