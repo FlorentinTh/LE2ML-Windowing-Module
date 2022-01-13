@@ -10,7 +10,7 @@ class WindowingFunction {
       throw new Error('Expected type for argument "signal" is Array');
     }
 
-    if (!signal.length > 0) {
+    if (!(signal.length > 0)) {
       throw new Error('Signal argument cannot be empty');
     }
   }
