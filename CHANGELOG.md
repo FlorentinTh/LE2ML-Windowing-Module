@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.6...v1.0.7) (2022-01-21)
+
+
+### CI
+
+* **build-workflow:** drop support of node-12 ([93a6381](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/93a638131304a949143d38e3af50796fd4b879ba))
+
+
+### Chore
+
+* **deps:** update dependencies ([aab18d0](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/aab18d03120a8755ed63cd6e88c7b4b1a529b207))
+* **dockerfile:** now build the project in a node-14 container instead of node-12 ([3fc32a7](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/3fc32a77b8b4fc4cee98502c07c34495180e10d7))
+
 ### [1.0.6](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.5...v1.0.6) (2022-01-13)
 
 
