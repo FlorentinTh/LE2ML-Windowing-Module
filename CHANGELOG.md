@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.10](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.9...v1.0.10) (2022-04-19)
+
+
+### Chore
+
+* **deps:** update dependencies ([c48ee69](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/c48ee69c21152c3dc7369cfed970959cd75551bb))
+* **deps:** update dependencies ([bb79cbc](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/bb79cbc38e99925a7d3a1d833297c294909470f8))
+* **deps:** update dependencies ([196eeb5](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/196eeb541dbefcf3cf2d0f4a844097575090c248))
+* **eslint:** change eslint config and dependencies ([c568822](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/c568822fbe16137cb35b059d3446a4321b07698a))
+
 ### [1.0.9](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.8...v1.0.9) (2022-03-04)
 
 
