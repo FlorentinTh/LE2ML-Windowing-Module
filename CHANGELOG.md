@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.12](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.11...v1.0.12) (2022-04-29)
+
+
+### Chore
+
+* **deps:** update dependencies ([c5650f8](https://github.com/FlorentinTh/LE2ML-Windowing-Module/commit/c5650f88bab14cf07e5bf36f810ea631b7c48e92))
+
 ### [1.0.11](https://github.com/FlorentinTh/LE2ML-Windowing-Module/compare/v1.0.10...v1.0.11) (2022-04-22)
 
 
